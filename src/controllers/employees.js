@@ -2,8 +2,6 @@ const instanciaAxiosConvenia = require('../services/convenia');
 const knex = require('../conexao');
 
 const getAllActiveEmployees = async (req, res) => {
-  const { token } = req.headers;
-
   try {
     const employees = await instanciaAxiosConvenia.get(`employees`);
     return res.status(employees.status).json(employees.data);
