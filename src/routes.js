@@ -1,8 +1,9 @@
 const express = require('express');
-const testController = require('./controllers/employees');
+const employeesController = require('./controllers/employees');
 
 const routes = express();
 
-routes.get('/employees', testController.getAllActiveEmployees);
+routes.get('/employees', employeesController.getAllActiveEmployees);
+routes.get('/employees/dismissed', employeesController.getAllActiveDismissedEmployees);
 
 module.exports = routes;
